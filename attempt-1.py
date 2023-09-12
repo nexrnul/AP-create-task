@@ -2,7 +2,7 @@ import requests
 
 #print(climate_data.json())
 
-regions = {"Canada": "56.130366, -106.346771", "Carribean": "14.521997912, -75.817663396", "Central America": }
+regions = {"Canada": "56.130366, -106.346771", "Carribean": "14.521997912, -75.817663396"}
 
 def identify_region():
 
