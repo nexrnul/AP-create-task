@@ -1,8 +1,12 @@
 import requests
 
-#print(climate_data.json())
+from datetime import datetime
 
-regions = {"Canada": "56.130366, -106.346771", "Carribean": "14.521997912, -75.817663396"}
+now = datetime.now()
+
+local_time = now.strftime("%m/%d/%Y, %H:%M:%S")
+
+print(local_time)
 
 def identify_region():
 
@@ -30,6 +34,11 @@ if climate_data.json()['cod'] == '404':
 else:
     climate = climate_data.json()['weather'][0]['description']
 temperature = round(climate_data.json()['main']['feels_like'])
+longitude = climate_date.json()['coord']['lon']
+
+
+print(climate_data.json())
+
 
 from rich import print
 print("[bold cornflower_blue]WEATHER[/] [bold cornflower_blue]REPORT[/]")
