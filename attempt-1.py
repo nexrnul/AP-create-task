@@ -55,36 +55,40 @@ def region_time(longitude):
                 local_time = UTC_hour - 8
                 if local_time <0:
                     local_time +=24
-    if -142 <= longitude < -92 and 60<= latitude <= 150:
+    if -140 <= longitude < -102 and 60<= latitude <= 150:
                 local_time = UTC_hour - 7
                 if local_time <0:
                     local_time +=24
-    if -114 <= longitude < -102 and 20<= latitude <= 60:
-                local_time = UTC_hour - 7
-                if local_time <0:
-                    local_time +=24     
-
-    if -97.5 <= longitude < -82.5:
+    if -102 <= longitude < -84:
                 local_time = UTC_hour - 6
                 if local_time <0:
+                    local_time +=24     
+    if -84 <= longitude < -68:
+                local_time = UTC_hour - 5
+                if local_time <0:
                     local_time +=24
-    if -82.5 <= longitude < -67.5:
+    if -68 <= longitude < -53:
                 local_time = UTC_hour - 4
                 if local_time <0:
                     local_time +=24
-    if -67.5 <= longitude < -52.5:
+
+    if -53 <= longitude < -38:
                 local_time = UTC_hour - 3
                 if local_time <0:
                     local_time +=24
-    if -52.5 <= longitude < -37.5:
+    if -38 <= longitude < -23:
                 local_time = UTC_hour - 2
                 if local_time <0:
                     local_time +=24
-    if -37.5 <= longitude < -22.5:
+    if -23 <= longitude < -15:
                 local_time = UTC_hour - 1
                 if local_time <0:
                     local_time +=24
-    if -22.5 <= longitude < -7.5:
+    if -15 <= longitude < 7 and 50<= latitude <= 165:
+                local_time = UTC_hour 
+                if local_time <0:
+                    local_time +=24
+    if -15 <= longitude < 0 and 0<= latitude <= 30:
                 local_time = UTC_hour 
                 if local_time <0:
                     local_time +=24
