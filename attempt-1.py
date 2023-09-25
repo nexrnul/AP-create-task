@@ -76,31 +76,23 @@ def region_time(longitude):
                 local_time = UTC_hour - 3
                 if local_time <0:
                     local_time +=24
-    if -38 <= longitude < -23:
-                local_time = UTC_hour - 2
-                if local_time <0:
-                    local_time +=24
-    if -23 <= longitude < -15:
-                local_time = UTC_hour - 1
-                if local_time <0:
-                    local_time +=24
-    if -15 <= longitude < 7 and 50<= latitude <= 165:
+    if -22 <= longitude < 2 and 50<= latitude <= 165:
                 local_time = UTC_hour 
                 if local_time <0:
                     local_time +=24
-    if -15 <= longitude < 0 and 0<= latitude <= 30:
-                local_time = UTC_hour 
+    if -15 <= longitude < 4 and 0<= latitude <= 30:
+                local_time = UTC_hour
                 if local_time <0:
                     local_time +=24
-    if -7.5 <= longitude < 7.5:
+    if 4 <= longitude < 22 and 0<= latitude <= 30:
                 local_time = UTC_hour + 1
                 if local_time <0:
                     local_time +=24
-    if 7.5 <= longitude < 22.5:
+    if 22 <= longitude < 30:
                 local_time = UTC_hour + 2
                 if local_time <0:
                     local_time +=24
-    if 22.5 <= longitude < 37.5:
+    if 30 <= longitude < 45: 
                 local_time = UTC_hour + 3
                 if local_time <0:
                     local_time +=24
