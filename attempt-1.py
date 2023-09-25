@@ -4,16 +4,12 @@
 import requests
 
 from datetime import datetime
-import pytz
 
 from geopy.geocoders import Nominatim
 import time
 from pprint import pprint
 from rich.console import Console
 from rich.theme import Theme
-#tz_LA = pytz.timezone('America/Los_Angeles')
-#datetime_LA = datetime.now(tz_LA)
-#print("LA:",datetime_LA.strftime("%m/%d/%Y, %H:%M:%S"))
 #UTC_time = now.strftime("%m/%d/%Y, %H:%M:%S")
 #print(climate_data.json())
 api_key = '3cf792a4f3be0e9964f39866b1e620a5'
@@ -43,28 +39,33 @@ UTC_minute = now.strftime(":%M%p")
 UTC_hour = now.strftime("%H")
 def region_time(longitude):
     UTC_hour = int(now.strftime("%H"))
-    if -172.5 <= longitude < -157.5:
+    if -172.5 <= longitude < -157.5 and -50<= latitude <=0:
+                local_time = UTC_hour - 11
+                if local_time <0:
+                    local_time +=24
+    if -157.5 <= longitude < -135 and -30<= latitude <=0:
+                local_time = UTC_hour - 10
+                if local_time <0:
+                    local_time +=24
+    if -160 <= longitude < -141 and 50<= latitude <= 71:
                 local_time = UTC_hour - 9
                 if local_time <0:
                     local_time +=24
-    if -157.5 <= longitude < -142.5:
-                local_time = UTC_hour - 9
-                if local_time <0:
-                    local_time +=24
-    if -142.5 <= longitude < -127.5:
+    if -135 <= longitude < -112 and 28<= latitude <= 60:
                 local_time = UTC_hour - 8
                 if local_time <0:
                     local_time +=24
-    if -127.5 <= longitude < -112.5:
+    if -142 <= longitude < -92 and 60<= latitude <= 150:
                 local_time = UTC_hour - 7
                 if local_time <0:
                     local_time +=24
-    if -112.5 <= longitude < -97.5:
-                local_time = UTC_hour - 6
+    if -114 <= longitude < -102 and 20<= latitude <= 60:
+                local_time = UTC_hour - 7
                 if local_time <0:
-                    local_time +=24
+                    local_time +=24     
+
     if -97.5 <= longitude < -82.5:
-                local_time = UTC_hour - 5
+                local_time = UTC_hour - 6
                 if local_time <0:
                     local_time +=24
     if -82.5 <= longitude < -67.5:
@@ -154,7 +155,7 @@ print(region_time_value)
 
 if 6 <= region_time_value <= 18:
     console = Console(theme=custom_theme)
-    console.print("WEATHER REPORT AT", region_time_value,(UTC_minute), style="day")
+    console.print("WEATHER REPORT AT", (region_time_value),(UTC_minute), style="day")
     console.print("the elements in", user_location, "are blending together to form", climate, "and a temperature of", temperature, "degrees °F", style="day")
 elif region_time_value == 0:
     print("error")
